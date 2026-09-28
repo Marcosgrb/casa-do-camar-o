@@ -132,39 +132,10 @@ const produtos = [
    OPÇÕES DE PESO
 ========================================== */
 
-const pesos = [
-
-    {
-        valor: 0.25,
-        nome: "250 g"
-    },
-
-    {
-        valor: 0.5,
-        nome: "500 g"
-    },
-
-    {
-        valor: 0.75,
-        nome: "750 g"
-    },
-
-    {
-        valor: 1,
-        nome: "1 kg"
-    },
-
-    {
-        valor: 1.5,
-        nome: "1,5 kg"
-    },
-
-    {
-        valor: 2,
-        nome: "2 kg"
-    }
-
-];
+const pesos = Array.from({ length: 10 }, (_, index) => ({
+    valor: index + 1,
+    nome: `${index + 1} kg`
+}));
 
 
 /* ==========================================
@@ -378,7 +349,7 @@ function renderProdutos() {
                             class="weight-label"
                             for="peso-${produto.id}"
                         >
-                            Escolha o peso
+                            Quantidade (pacotes de 1 kg)
                         </label>
 
                         <select
